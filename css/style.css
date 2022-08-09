@@ -17,7 +17,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
 }
 
@@ -109,6 +109,10 @@ section{
 
 /* about section start */
 
+section.about .container .flex-1{
+    align-items: center;
+}
+
 section.about .about-me-img{
     height: 450px;
 }
@@ -161,10 +165,6 @@ section.about .social a img{
     padding: 0.5rem;
 }
 
-section.about .container img{
-    margin-left: 5rem;
-}
-
 /* about section end */
 
 /* Services section start*/
@@ -215,6 +215,7 @@ section.services .card-wrapper .card{
 }
 section.services .card-wrapper .card:hover{
     background: var(--dark);
+    color: var(--pure);
 }
 section.services .card-wrapper .card h2:hover{
     color: var(--pure);
@@ -428,8 +429,8 @@ section.blog .card-wrapper .card .card-content p{
     font-family: 'lato',sans-serif;
     color: var(--ternary);
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    font-size: 0.8rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.7rem;
 }
 
 section.blog .card-wrapper .card .card-content a.readmore{
@@ -471,6 +472,10 @@ section.contact .card-wrapper .card h6{
     margin-bottom: 4rem;
 }
 
+section.contact form{
+    padding: 4rem;
+}
+
 section.contact .input-wrap{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -489,17 +494,18 @@ section.contact .input-wrap-2 input{
 
 section.contact .input-wrap-2 textarea{
     padding: 0.5rem;
-    border: 1px solid var(--light);
+    border: 1px solid gray;
     font-size: 0.9rem;
 }
 
 section.contact input{
     padding: 0.5rem;
-    border: 1px solid var(--light);
+    border: 1px solid gray;
     font-size: 0.9rem;
 }
 
 section.contact .input-wrap-2 textarea:focus,section.contact input:focus{
+    border: 1px solid var(--primary);
     outline: none;
 }
 
@@ -635,11 +641,8 @@ footer .copyright{
     header{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 27% 89%, 0 100%);
     }
-    section.about{
-        padding: 3rem;
-    }
-    section.about .container{
-        margin: 2rem;
+    section.about .container .right-sec{
+        padding: 0.5rem;
     }
     section.about .container img{
         height: 350px;
@@ -658,26 +661,30 @@ footer .copyright{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 67% 97%, 0 100%);
     }
     section.blog .container{
-        padding: 5rem;
+        padding: 4rem;
     }
     section.blog .card-wrapper{
         grid-template-columns: repeat(2,1fr);
     }
-    section.blog .card-wrapper .card .card-content{
-        display: flex;
-        flex-direction: column;
-    }
     section.blog .card-wrapper .card .card-content a{
-        width: 40%;
+        font-size: 1.4rem;
+    }
+    section.blog .card-wrapper .card .card-content a.readmore{
         font-size: 1.3rem;
     }
     section.blog .card-wrapper .card .card-content p{
         font-size: 1.1rem;
         line-height: 1.5rem;
     }
+    section.contact .card-wrapper .card img{
+        margin-bottom: 2rem;
+    }
 }
 
-@media (max-width:850px){
+@media (max-width:800px){
+    section{
+        padding: 5rem 0;
+    }
     body{
         overflow-x: hidden;
     }
@@ -696,9 +703,6 @@ footer .copyright{
     section.about p{
         line-height: 1.5rem;
     }
-    section.about .container{
-        flex-direction: column;
-    }
     section.about .container .right-sec{
         margin-top: 2rem;
         text-align: center;
@@ -706,18 +710,107 @@ footer .copyright{
     section.about .container .right-sec .social{
         justify-content: center;
     }
+    section.freelancer{
+        padding: 3rem;
+        padding-bottom: 6rem;
+    }
+    section.reviews .section-heading + p{
+        margin-bottom: 2rem;
+    }
+    section.reviews .slider .slide{
+        padding: 0 1rem;
+    }
+    section.blog{
+        padding: 1rem 0;
+        padding-bottom: 4rem;
+    }
+    section.blog .container{
+        padding: 3rem;
+    }
+    section.blog .card-wrapper .card{
+        display: flex;
+    }
+    section.blog .card-wrapper .card-content{
+        width: 70%;
+        padding: 0.5rem;
+    }
+    section.blog .card-wrapper .card .card-content a{
+        font-size: 1.3rem;
+    }
+    section.blog .card-wrapper .card .card-content p{
+        font-size: 0.95rem;
+        line-height: 1.1rem;
+    }
+    section.blog .card-wrapper .card .card-content a.readmore{
+        font-size: 0.8rem;
+        padding: 3px 5px;
+    }
+    section.blog .card-wrapper .img-wrapper{
+        width: 30%;
+    }
+    section.blog .card-wrapper .card .img-wrapper img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
     section.blog .card-wrapper{
         grid-template-columns: repeat(1,1fr);
     }
-    section.blog .card-wrapper .card .card-content{
-        padding: 2rem 4rem;
+    section.contact form{
+        padding: 2rem;
     }
-    section.blog .card-wrapper .card .card-content a{
-        font-size: 2rem;
+}
+
+@media (max-width:650px){
+    .btn{
+        padding: 0.7rem 1.4rem;
     }
-    section.blog .card-wrapper .card .card-content p{
+    section{
+        padding: 3rem 0;
+    }
+    .hero .left-side img{
+        width: 300px;
+    }
+    .hero .right-side h1{
         font-size: 1.8rem;
-        line-height: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .hero .right-side p{
+        font-size: 0.9rem;
+    }
+    section.about .container{
+        flex-direction: column;
+    }
+    section.about .container img{
+        height: 370px;
+        width: 340px;
+    }
+    section.services .section-heading + p{
+        font-size: 1rem;
+    }
+    section.services .card-wrapper .card p{
+        font-size: 1.3rem;
+        line-height: 1.15;
+    }
+    section.freelancer h1{
+        font-size: 1.7rem;
+    }
+    section.work{
+        padding: 3rem 2.5rem;
+    }
+    section.work .card-wrapper{
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    section.contact .card-wrapper{
+        grid-template-columns: repeat(1fr);
+        gap: 1rem;
+    }
+    section.contact .card-wrapper .card img{
+        margin-bottom: 1rem;
+    }
+    section.contact form{
+        padding: 1.5rem;
     }
 }
 
@@ -730,12 +823,19 @@ footer .copyright{
     }
     header{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 69% 95%, 0 100%);
+        position: relative;
     }
-    .hero .right{
+    .hero .right-side{
         position: absolute;
-        top:260px;
+        top: 300px;
+        left: 20px;
         padding:0 1rem;
         background:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9));
+    }
+    .hero .right-side img{
+        height: 450px;
+        width: 300px;
+        object-fit: cover;
     }
     .hero .left{
         margin-top:-5rem;
@@ -780,5 +880,87 @@ footer .copyright{
     }
     section.contact .input-wrap{
         grid-template-columns: repeat(1, 1fr);
+    }
+    section.contact form{
+        padding: 1rem;
+    }
+    section.blog .card-wrapper .card{
+        display: flex;
+        flex-direction: column;
+    }
+    section.blog .card-wrapper .card-content{
+        height: 60%;
+        width: 100%;
+        padding: 1.5rem;
+    }
+    section.blog .card-wrapper .img-wrapper{
+        height: 40%;
+        width: 100%;
+    }
+    section.blog .card-wrapper .card .card-content a{
+        font-size: 1.8rem;
+    }
+    section.blog .card-wrapper .card .card-content p{
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+    }
+    section.blog .card-wrapper .card .card-content a.readmore{
+        font-size: 1.4rem;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 450px){
+    .btn{
+        padding: 0.4rem 1.1;
+        font-size: 0.9rem;
+    }
+    section{
+        padding: 2rem 0;
+    }
+    p{
+        font-size: 0.8rem;
+    }
+    section.about .container img{
+        height: 280px;
+        width: 250px;
+    }
+    section.services .card-wrapper .card{
+        padding: 1rem;
+        padding-top: 4rem;
+    }
+    section.freelancer{
+        padding: 1.5rem;
+        padding-bottom: 3rem;
+    }
+    section.freelancer h1{
+        font-size: 1.2rem;
+        list-style: 1.1rem;
+    }
+    section.work .card-wrapper .card{
+        height: 200px;
+    }
+    section.blog .card-wrapper .card{
+        height: 500px;
+    }
+    section.blog .card-wrapper .card-content{
+        height: 60%;
+        width: 100%;
+        padding: 1.5rem;
+    }
+    section.blog .card-wrapper .img-wrapper{
+        height: 40%;
+        width: 100%;
+    }
+    section.blog .card-wrapper .card .card-content a{
+        font-size: 1.3rem;
+    }
+    section.blog .card-wrapper .card .card-content p{
+        font-size: 1.1rem;
+        line-height: 1.2rem;
+    }
+    section.blog .card-wrapper .card .card-content a.readmore{
+        font-size: 1.2rem;
+        padding: 3px 5px;
     }
 }
